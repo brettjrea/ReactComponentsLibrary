@@ -1,41 +1,54 @@
-# React example 
+# ReactComponentLibrary with Deno and Vite
 
-This example shows how to run [Vite](https://vitejs.dev) and React with vite-deno-plugin.
+This guide details the setup and usage of the ReactComponentLibrary with Vite, leveraging the vite-deno-plugin for an enhanced development experience with Deno. It includes instructions for development, building, previewing, and optimizing your project, as well as explanations for specific library directories.
 
-To start this example, run:
+## Quick Start
+
+To get started with this example, run the development server:
 
 ```bash
-$ deno task dev
+deno task dev
 ```
 
-Refer to the [`./deno.json`](./deno.json) for the other tasks.
+For comprehensive details on available tasks, refer to the [`./deno.json`](./deno.json) file.
 
-## Available tasks
+## Available Tasks
 
- - `deno task dev`: start dev server
- - `deno task build`: build for production
- - `deno task preview`: preview production build
+- `deno task dev`: Starts the development server with hot module replacement for efficient development.
+- `deno task build`: Builds the project for production, optimizing for performance.
+- `deno task preview`: Serves the production build on a local server for previewing.
+- `deno task optimize`: Analyzes and optimizes your project dependencies, improving load times.
 
-## How to add a dependency
+## Directory Structure
 
-Just add the dependency to imports field in `deno.json`.
+- `/lib/r`: Contains components and utilities specific to React.
+- `/lib/rnw`: Holds components and utilities tailored for React Native Web, allowing React Native components to be used in web projects.
+- `/lib/rnwg`: Integrates React Native Web components with Git, enabling version control for shared components across platforms.
+
+## Adding Dependencies
+
+To add a new dependency, update the imports field in `deno.json`:
 
 ```json
 {
   "imports": {
-    "wouter": "https://esm.sh/wouter@2.12.0"
+    "react": "https://esm.sh/react@17.0.2"
   }
 }
 ```
 
-And import it.
+You can then import it in your project:
 
 ```tsx
-import * as wouter from "wouter";
+import React from "react";
 ```
 
-Or you can import from URL directly.
+Alternatively, import directly from the URL:
 
 ```tsx
-import * as wouter from "https://esm.sh/wouter@2.12.0";
+import React from "https://esm.sh/react@17.0.2";
 ```
+
+## Using ReactComponentLibrary
+
+When developing with ReactComponentLibrary, ensure to reference the appropriate directory based on your target platform (`/lib/r` for React, `/lib/rnw` for React Native Web, and `/lib/rnwg` for React Native Web with Git enhancements). This modular structure simplifies cross-platform development and version control, streamlining the development process.
