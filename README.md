@@ -1,4 +1,4 @@
-# ReactComponentLibrary with Deno and Vite
+# ReactComponentsLibrary with Deno and Vite
 
 This guide details the setup and usage of the ReactComponentLibrary with Vite, leveraging the vite-deno-plugin for an enhanced development experience with Deno. It includes instructions for development, building, previewing, and optimizing your project, as well as explanations for specific library directories.
 
