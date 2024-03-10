@@ -2,9 +2,34 @@ import React, { useState } from 'react';
 import git from 'https://esm.sh/isomorphic-git';
 import LightningFS from 'https://esm.sh/@isomorphic-git/lightning-fs';
 import http from 'https://esm.sh/isomorphic-git/http/web';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-import MyButton from '../rnw//mybutton.tsx';
+// Add an onPress prop to the component's props
+const MyButton = ({ title, onPress, statusMessage = '', showStatus = false }) => {
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.button}>
+      {/* Conditionally display statusMessage or title */}
+      <Text style={styles.text}>
+        {showStatus ? statusMessage : title}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
+const styles = StyleSheet.create({
+  button: {
+    padding: 10,
+    backgroundColor: 'blue',
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+  },
+  text: {
+    color: 'white',
+    fontSize: 16,
+  },
+});
 // Initialize fs and directory path
 const fs = new LightningFS('fs', {wipe: true});
 const pfs = fs.promises;
@@ -60,4 +85,3 @@ const GitComponent = () => {
 };
 
 export default GitComponent;
-

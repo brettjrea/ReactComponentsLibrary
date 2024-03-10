@@ -1,0 +1,11 @@
+
+{
+  "tasks": {
+    "start": "deno run --allow-net --import-map=deno.json main.ts"
+  },
+  "imports": {
+    "hono": "npm:hono@^1.0.0",
+    "hono/graphql-server": "npm:hono/graphql-server",
+    "graphql": "npm:graphql@latest"
+  }
+}
