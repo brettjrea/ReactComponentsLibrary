@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import git from 'https://esm.sh/isomorphic-git';
-import LightningFS from 'https://esm.sh/@isomorphic-git/lightning-fs';
-import http from 'https://esm.sh/isomorphic-git/http/web';
+import git from 'isomorphic-git';
+import LightningFS from '@isomorphic-git/lightning-fs';
+import http from 'isomorphic-git/http/web';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+
 
 // Add an onPress prop to the component's props
 const MyButton = ({ title, onPress, statusMessage = '', showStatus = false }) => {
